@@ -35,6 +35,7 @@ export const getServerSideProps: GetServerSideProps = withSSRSession(
 //        Authorization: 'bearer ' + session.accessToken,
 //      },
 //    });
+    console.log(session)
     return { props: { } };
   }
 );
