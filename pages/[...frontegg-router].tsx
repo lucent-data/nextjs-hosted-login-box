@@ -1,4 +1,4 @@
-export {
-  FronteggRouter as default,
-  FronteggRouterProps as getServerSideProps,
-} from '@frontegg/nextjs';
+import { FronteggRouter, FronteggRouterProps } from "@frontegg/nextjs/pages";
+
+export const getServerSideProps = FronteggRouterProps;
+export default FronteggRouter;
