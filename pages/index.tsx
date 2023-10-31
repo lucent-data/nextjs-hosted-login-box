@@ -1,6 +1,7 @@
 import { useAuth } from "@frontegg/nextjs";
 import { withSSRSession } from "@frontegg/nextjs/pages";
 import { GetServerSideProps } from "next";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function MyPage({ products }) {
@@ -23,6 +24,9 @@ export default function MyPage({ products }) {
       </div>
       <div>
         <button onClick={logout}>Log out</button>
+      </div>
+      <div>
+        <Link href="/test">Navigate to test Page</Link>
       </div>
     </div>
   );
