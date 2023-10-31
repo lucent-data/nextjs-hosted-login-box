@@ -1,5 +1,3 @@
-import { withSSRSession } from "@frontegg/nextjs/pages";
-import { GetServerSideProps } from "next";
 import Link from "next/link";
 import { useAuth } from "../hooks/use-auth";
 
@@ -25,10 +23,3 @@ export default function MyPage({ products }) {
     </div>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = withSSRSession(
-  async (context, session) => {
-    console.log(session);
-    return { props: {} };
-  }
-);
