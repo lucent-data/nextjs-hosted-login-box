@@ -1,16 +1,10 @@
-import { useAuth } from "@frontegg/nextjs";
 import { withSSRSession } from "@frontegg/nextjs/pages";
 import { GetServerSideProps } from "next";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useAuth } from "../hooks/use-auth";
 
 export default function MyPage({ products }) {
-  const { user } = useAuth();
-  const router = useRouter();
-
-  const logout = () => {
-    router.replace("/account/logout");
-  };
+  const { user, logout } = useAuth();
 
   return (
     <div>
