@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 export default function MyPage() {
+  useEffect(() => {
+    throw new Error("Test error");
+  }, []);
   return (
     <div>
       <h1>Test Page</h1>
