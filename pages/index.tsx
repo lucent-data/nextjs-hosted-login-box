@@ -1,8 +1,11 @@
 import { useAuth } from "@frontegg/nextjs";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function MyPage({ products }) {
   const { user } = useAuth();
+
+  const router = useRouter();
 
   return (
     <div>
@@ -15,7 +18,10 @@ export default function MyPage({ products }) {
         <span>Logged in as: {user?.name}</span>
       </div>
       <div>
-        <Link href="/test">Navigate to test Page</Link>
+        <button onClick={() => router.push("/test")}>
+          Navigate with router push
+        </button>
+        <Link href="/test">Navigate with link</Link>
       </div>
     </div>
   );
